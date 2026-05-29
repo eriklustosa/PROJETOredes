@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  servidor:
+    build: .
+    container_name: redes_servidor
+    volumes:
+      - ./server:/app
+      - ./capturas:/capturas # Pasta para salvar os .pcap do tcpdump
+    cap_add:
+      - NET_ADMIN
+    command: tail -f /dev/null # Mantém o container rodando para entrarmos nele
+
+  cliente:
+    build: .
+    container_name: redes_cliente
+    volumes:
+      - ./client:/app
+      - ./capturas:/capturas
+    cap_add:
+      - NET_ADMIN
+    command: tail -f /dev/null
+    depends_on:
+      - servidor
