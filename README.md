@@ -125,3 +125,6 @@ O algoritmo Go-Back-N (R-UDP) sofre degradação extrema em redes instáveis. No
 Após os testes, encerre os contentores e limpe as redes virtuais executando:
 
     docker-compose down
+
+## 🚀 LINK para o Google Colab:
+https://colab.research.google.com/drive/1_SZGXZ2MxcEtS__1Jj5Y7Gw69Gd4bWQm?usp=sharing
